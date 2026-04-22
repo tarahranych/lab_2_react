@@ -1,68 +1,133 @@
+/* ===== ЗМІННІ ТЕМ (Світла / Темна) ===== */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --bg-color: #f1f5f9;
+    --container-bg: #ffffff;
+    --text-color: #334155;
+    --header-bg: #1e293b;
+    --header-text: #ffffff;
+    --accent-color: #3b82f6;
+    --border-color: #e2e8f0;
+    --card-bg: #f8fafc;
+    --card-hover: #eff6ff;
+    --muted-text: #64748b;
+    --modal-overlay: rgba(0,0,0,0.6);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Коли на тегу <html> з'являється data-theme="night", змінні змінюють значення */
+[data-theme="night"] {
+    --bg-color: #0f172a;
+    --container-bg: #1e293b;
+    --text-color: #e2e8f0;
+    --header-bg: #0b1120;
+    --header-text: #f1f5f9;
+    --accent-color: #3b82f6;
+    --border-color: #334155;
+    --card-bg: #334155;
+    --card-hover: #475569;
+    --muted-text: #94a3b8;
+    --modal-overlay: rgba(0,0,0,0.8);
 }
 
+/* Базові стилі */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--container-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: background-color 0.3s;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* --- HEADER --- */
+#main-header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 4px solid var(--accent-color);
+    transition: background-color 0.3s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+#main-header h1 { margin: 0 0 10px 0; font-size: 2.5em; }
+.highlight { color: #60a5fa; }
+.subtitle { font-size: 1.2em; color: #cbd5e1; margin-bottom: 20px; }
+
+.contacts {
+    display: flex; justify-content: center; gap: 15px;
+    font-size: 0.9em; color: #94a3b8;
 }
+.contacts a { color: #94a3b8; text-decoration: none; }
+
+/* --- СЕКЦІЇ --- */
+.cv-section {
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+.cv-section h2 {
+    color: var(--accent-color);
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 10px; margin-bottom: 20px;
+}
+
+ul { list-style-type: none; padding: 0; margin: 0; }
+
+/* --- КАРТКИ ТА НАВИЧКИ --- */
+.card, .skills-list li, .comment {
+    background-color: var(--card-bg);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+.card {
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+}
+.card p, .comment p { margin: 10px 0 0 0; color: var(--muted-text); }
+.card:hover { transform: translateX(10px); background-color: var(--card-hover); }
+
+.skills-list { display: flex; flex-direction: column; gap: 10px; }
+
+/* --- FOOTER --- */
+footer { text-align: center; padding: 20px; color: var(--muted-text); }
+footer hr { border: none; border-top: 1px solid var(--border-color); margin-bottom: 15px; }
+
+/* --- НОВІ ЕЛЕМЕНТИ (Кнопка, Модалка, Відгуки) --- */
+.theme-btn {
+    position: fixed; top: 20px; right: 20px;
+    padding: 10px 15px; border: none; border-radius: 8px;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    font-weight: bold; cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+.theme-btn:hover { background-color: var(--border-color); }
+
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--modal-overlay); align-items: center; justify-content: center; z-index: 1000;
+}
+.modal-overlay.active { display: flex; }
+.modal-content {
+    background: var(--container-bg); color: var(--text-color);
+    padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; position: relative;
+}
+.close-btn {
+    position: absolute; top: 10px; right: 15px; background: none; border: none;
+    font-size: 24px; cursor: pointer; color: var(--muted-text);
+}
+.comment { border-left: 4px solid #10b981; }
+.comment h4 { margin: 0 0 5px 0; color: var(--accent-color); }
+.comment small { color: var(--muted-text); }
