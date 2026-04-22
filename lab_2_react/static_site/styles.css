@@ -1,237 +1,128 @@
-/* Базові стилі для всієї сторінки (Селектор тегу) */
+:root[data-theme="day"] {
+    --bg-color: #f8fafc;
+    --text-color: #334155;
+    --header-bg: #1e293b;
+    --header-text: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --accent-color: #3b82f6;
+}
+
+:root[data-theme="night"] {
+    --bg-color: #0f172a;
+    --text-color: #cbd5e1;
+    --header-bg: #1e293b;
+    --header-text: #ffffff;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --accent-color: #60a5fa;
+}
 
 body {
-
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-background-color: #f1f5f9;
-
-color: #334155;
-
-margin: 0;
-
-padding: 20px; /* Box Model: внутрішній відступ */
-
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
-
-
-
-/* Контейнер для центрування */
 
 .container {
-
-max-width: 800px;
-
-margin: 0 auto; /* Box Model: вирівнювання по центру */
-
-background-color: white;
-
-border-radius: 12px;
-
-box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-
-overflow: hidden;
-
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-
-
-/* --- СТИЛІ HEADER --- */
-
-/* Селектор ID (використовується тільки 1 раз на сторінці) */
-
-#main-header {
-
-background-color: #1e293b;
-
-color: white;
-
-text-align: center;
-
-padding: 40px 20px; /* Box model */
-
-border-bottom: 4px solid #3b82f6;
-
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 40px 20px;
+    text-align: center;
 }
 
-
-
-#main-header h1 {
-
-margin: 0 0 10px 0;
-
-font-size: 2.5em;
-
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
 }
-
-
-
-.highlight {
-
-color: #60a5fa;
-
-}
-
-
 
 .subtitle {
-
-font-size: 1.2em;
-
-color: #cbd5e1;
-
-margin-bottom: 20px;
-
+    font-size: 1.2em;
+    opacity: 0.9;
 }
 
-
-
-/* Використання Flexbox для контактів */
-
-.contacts {
-
-display: flex;
-
-justify-content: center;
-
-gap: 15px;
-
-font-size: 0.9em;
-
-color: #94a3b8;
-
+.contacts a {
+    color: var(--accent-color);
+    text-decoration: none;
 }
 
-
-
-/* --- СТИЛІ СЕКЦІЙ --- */
-
-.cv-section {
-
-padding: 20px 40px;
-
-border-bottom: 1px solid #e2e8f0;
-
-}
-
-
+main { padding: 30px; }
 
 .cv-section h2 {
-
-color: #2563eb;
-
-border-bottom: 2px dashed #bfdbfe;
-
-padding-bottom: 10px;
-
-margin-bottom: 20px;
-
+    color: var(--accent-color);
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 10px;
 }
 
+ul { list-style: none; padding: 0; }
 
-
-/* --- СТИЛІ СПИСКІВ ТА ДОСВІДУ --- */
-
-ul {
-
-list-style-type: none; /* Забираємо стандартні крапки */
-
-padding: 0;
-
-margin: 0;
-
+.card, .skills-list li {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
 }
 
-
-
-/* Картки досвіду */
-
-.card {
-
-background-color: #f8fafc;
-
-border-left: 4px solid #3b82f6; /* Box model: ліва рамка */
-
-padding: 15px;
-
-margin-bottom: 15px;
-
-border-radius: 0 8px 8px 0;
-
-transition: transform 0.3s ease;
-
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000;
 }
-
-
-
-.card p {
-
-margin: 10px 0 0 0;
-
-color: #475569;
-
-}
-
-
-
-/* Псевдоклас :hover (зміна при наведенні мишки) */
-
-.card:hover {
-
-transform: translateX(10px);
-
-background-color: #eff6ff;
-
-}
-
-
-
-/* Навички: використання Flexbox */
-
-.skills-list {
-
-display: flex;
-
-flex-direction: column;
-
-gap: 10px; /* Відстань між рядками */
-
-}
-
-
-
-.skills-list li {
-
-background-color: #f1f5f9;
-
-padding: 10px 15px;
-
-border-radius: 6px;
-
-}
-
-
-
-/* --- СТИЛІ FOOTER --- */
 
 footer {
-
-text-align: center;
-
-padding: 20px;
-
-color: #64748b;
-
+    text-align: center;
+    padding: 20px;
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
 }
 
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
 
+.modal-content {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
 
-footer hr {
-
-border: none;
-
-border-top: 1px solid #e2e8f0;
-
-margin-bottom: 15px;
-
+.close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
 }
