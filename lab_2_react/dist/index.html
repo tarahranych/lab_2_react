@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="day">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Тарас Граничка</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6KNMUkv.css">
+</head>
+<body>
+    <button class="theme-btn" id="theme-btn">🌙 Темна тема</button>
+
+    <div class="container">
+        
+        <header id="main-header">
+            <h1>Тарас Граничка</h1>
+            <p class="subtitle">Trainee QA Engineer / Спеціаліст з кібербезпеки та Linux</p>
+            <div class="contacts">
+                <span> Львівська область, Україна</span>
+                <span>|</span>
+                <span> <a href="mailto:granichka34@gmail.com">granichka34@gmail.com</a></span>
+            </div>
+        </header>
+
+        <main>
+            <section class="cv-section">
+                <h2>Про мене</h2>
+                <p>Цілеспрямований фахівець із глибоким інтересом до забезпечення якості програмного забезпечення, системного адміністрування ОС Linux та кібербезпеки.</p>
+            </section>
+
+            <section class="cv-section">
+                <h2>Досвід та практика</h2>
+                <ul class="experience-list">
+                    <li class="card">
+                        <strong>Стажування в UnderDefense</strong>
+                        <p>Виконання практичних лабораторних завдань з кібербезпеки. Аналіз вразливостей та робота з інфраструктурою.</p>
+                    </li>
+                    <li class="card">
+                        <strong>Хмарні технології (AWS)</strong>
+                        <p>Самостійне налаштування та розгортання хмарної віртуальної машини Ubuntu на базі екземплярів AWS EC2.</p>
+                    </li>
+                    <li class="card">
+                        <strong>Автоматизація сайтів</strong>
+                        <p>Створення промптів для витягу інформації з сайтів</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="cv-section">
+                <h2>Технічні навички</h2>
+                <ul class="skills-list">
+                    <li><strong>ОС:</strong> Linux (Ubuntu), Windows</li>
+                    <li><strong>QA та тестування:</strong> Розуміння процесів тестування, підготовка до позиції Trainee QA</li>
+                    <li><strong>Інструменти:</strong> Git, HTML, AWS</li>
+                </ul>
+            </section>
+
+            <section class="cv-section">
+                <h2>Відгуки (Fetch API)</h2>
+                <div id="comments-container">
+                    <p>Завантаження коментарів...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>CV - Тарас Граничка, 2026</p>
+            <div id="sys-info" style="font-size: 0.8em; margin-top: 15px;"></div>
+        </footer>
+
+    </div>
+
+    <div class="modal-overlay" id="contact-modal">
+        <div class="modal-content">
+            <button class="close-btn" id="close-modal">×</button>
+            <h2 style="margin-top: 0;">Зв'язок зі мною</h2>
+            
+            <form action="https://formspree.io/f/mojpzwwz" method="POST" style="display: flex; flex-direction: column; gap: 10px;">
+                <input type="text" name="name" placeholder="Ім'я" required style="padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                <input type="email" name="email" placeholder="Email" required style="padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                <input type="tel" name="phone" id="phone-input" placeholder="+38 (0__) ___-__-__" maxlength="19" required style="padding: 12px 15px; border-radius: 8px; border: 2px solid #e2e8f0; background-color: #f8fafc; font-size: 16px; outline: none; width: 100%; box-sizing: border-box;">
+                <textarea name="message" rows="4" placeholder="Повідомлення" required style="padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1;"></textarea>
+                <button type="submit" style="padding: 10px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer;">Відправити</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
