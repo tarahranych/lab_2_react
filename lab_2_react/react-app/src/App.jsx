@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './App.css'; // Переконайся, що твій style.css підключено тут
+import './App.css'; // Переконайся, що твій style.css підввключено тут
 import Reviews from './Reviews';
 import Footer from './Footer';
 import ContactForm from './ContactForm';
