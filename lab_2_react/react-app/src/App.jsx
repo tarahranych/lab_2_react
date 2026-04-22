@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './App.css'; // Переконайся, що твій style.css підввключено тут
-import Reviews from './Reviews';
 import Footer from './Footer';
 import ContactForm from './ContactForm';
 
@@ -78,7 +77,7 @@ function App() {
           </section>
 
           {/* Інтеграція компонента відгуків */}
-          <Reviews />
+          
         </main>
 
         {/* Інтеграція футера */}
