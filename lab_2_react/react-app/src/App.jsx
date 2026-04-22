@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css'; // Переконайся, що твій style.css підввключено тут
-import Footer from './Footer';
-import ContactForm from './ContactForm';
+import Reviews from './components/Reviews';
+import Footer from './components/Footer';
+import ContactForm from './components/ContactForm';
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
