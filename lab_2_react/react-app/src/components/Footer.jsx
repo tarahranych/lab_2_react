@@ -21,7 +21,7 @@ export default function Footer() {
 
   return (
     <footer>
-      <p>CV - Тарас Граничка, 2026</p>
+      <p>CV - Степан Балич, 2026</p>
       <hr />
       <div style={{ fontSize: '0.8em' }}>
         <strong>Інформація про систему (React LocalStorage):</strong><br />

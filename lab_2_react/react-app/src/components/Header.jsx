@@ -10,12 +10,12 @@ function Header({ theme, toggleTheme }) {
         {theme === 'day' ? '🌙 Темна тема' : '☀️ Денна тема'}
       </button>
 
-      <h1>Тарас Граничка</h1>
+      <h1>Степан Балич</h1>
       <p className="subtitle">Trainee QA Engineer / Спеціаліст з кібербезпеки та Linux</p>
       <div className="contacts">
         <span>Львівська область, Україна</span>
         <span>|</span>
-        <span><a href="mailto:granichka34@gmail.com">granichka34@gmail.com</a></span>
+        <span><a href="mailto:granichka34@gmail.com">balychs@gmail.com</a></span>
       </div>
     </header>
   );
