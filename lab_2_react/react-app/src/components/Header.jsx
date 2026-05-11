@@ -11,7 +11,7 @@ function Header({ theme, toggleTheme }) {
       </button>
 
       <h1>Степан Балич</h1>
-      <p className="subtitle">Trainee QA Engineer / Спеціаліст з кібербезпеки та Linux</p>
+      <p className="subtitle">Спеціаліст з кібербезпеки</p>
       <div className="contacts">
         <span>Львівська область, Україна</span>
         <span>|</span>
